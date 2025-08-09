@@ -1,7 +1,7 @@
 // Configuration Template - À personnaliser pour chaque cabinet
 const CABINET_CONFIG = {
     // OBLIGATOIRE - À modifier pour chaque cabinet
-    WEBHOOK_URL: 'agenceefficads/onboarding-test',
+    WEBHOOK_URL: 'https://n8n.srv910637.hstgr.cloud/webhook/client-onboarding',
     CABINET_NAME: 'AGENCE EFFICADS',
     GESTIONNAIRE_NOM: 'BENHLAL YAZID',
     GESTIONNAIRE_EMAIL: 'benhlalyazid@gmail.com',
