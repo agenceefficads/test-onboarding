@@ -559,25 +559,19 @@
                     submitBtn.style.background = 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))';
                     submitBtn.classList.add('success-animation');
 
-                    // Message de succès
-                    setTimeout(() => {
-                        document.querySelector('.container').innerHTML = `
-                            <div style="text-align: center; padding: 60px 30px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; border-radius: 20px;">
-                                <div style="font-size: 80px; margin-bottom: 20px;">🎉</div>
-                                <h1 style="font-size: 32px; margin-bottom: 20px;">Intégration Terminée !</h1>
-                                <div style="font-size: 20px; margin-bottom: 20px; font-weight: 600;">${CONFIG.CABINET_NAME}</div>
-                                <p style="font-size: 18px; opacity: 0.9; margin-bottom: 30px;">
-                                    Votre dossier a été créé avec succès. Vous allez recevoir un e-mail de confirmation sous quelques minutes.
-                                </p>
-                                <div style="background: rgba(255,255,255,0.2); padding: 20px; border-radius: 10px; margin-top: 30px;">
-                                    <p><strong>✅ Dossier Google Drive créé</strong></p>
-                                    <p><strong>✅ Documents téléchargés</strong></p>
-                                    <p><strong>✅ E-mails envoyés</strong></p>
-                                    <p><strong>✅ Votre gestionnaire vous contactera sous 48h</strong></p>
-                                </div>
-                            </div>
-                        `;
-                    }, 1500);
+// Message de succès
+setTimeout(() => {
+    document.querySelector('.container').innerHTML = `
+        <div style="text-align: center; padding: 60px 30px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; border-radius: 20px;">
+            <div style="font-size: 80px; margin-bottom: 20px;">🎉</div>
+            <h1 style="font-size: 32px; margin-bottom: 20px;">Intégration Terminée !</h1>
+            <div style="font-size: 20px; margin-bottom: 20px; font-weight: 600;">${CONFIG.CABINET_NAME}</div>
+            <p style="font-size: 18px; opacity: 0.9; margin-bottom: 30px;">
+                Votre dossier a été créé avec succès. Vous allez recevoir un e-mail de confirmation sous quelques minutes.
+            </p>
+        </div>
+    `;
+}, 1500);
                 } else {
                     throw new Error(`Erreur HTTP : ${response.status}`);
                 }
