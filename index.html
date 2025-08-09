@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Onboarding Client - [CABINET_NAME]</title>
+    <title>Intégration Client - AGENCE EFFICADS</title>
     <style>
         :root {
             /* Variables CSS - Faciles à personnaliser */
             --primary-color: #28a745;
             --secondary-color: #20c997;
             --accent-color: #1a4d2e;
-            --cabinet-name: "[CABINET_NAME]";
+            --cabinet-name: "AGENCE EFFICADS";
         }
 
         * {
@@ -318,8 +318,8 @@
     <div class="container">
         <div class="header">
             <div class="logo">🏢</div>
-            <h1>🎯 Onboarding Client</h1>
-            <div class="cabinet-name">[CABINET_NAME]</div>
+            <h1>🎯 Intégration Client</h1>
+            <div class="cabinet-name">AGENCE EFFICADS</div>
             <p>Bienvenue dans notre processus d'intégration simplifié</p>
         </div>
 
@@ -343,18 +343,18 @@
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="email">Email <span class="required">*</span></label>
+                            <label for="email">Adresse e-mail <span class="required">*</span></label>
                             <input type="email" id="email" name="email" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="telephone">Téléphone <span class="required">*</span></label>
+                            <label for="telephone">Numéro de téléphone <span class="required">*</span></label>
                             <input type="tel" id="telephone" name="telephone" required>
                         </div>
                     </div>
                     
                     <div class="form-group full-width">
-                        <label for="adresse">Adresse</label>
+                        <label for="adresse">Adresse complète</label>
                         <textarea id="adresse" name="adresse" rows="3" placeholder="Votre adresse complète"></textarea>
                     </div>
                 </div>
@@ -382,12 +382,12 @@
                     </div>
                     
                     <div class="form-group full-width">
-                        <label for="activite">Activité</label>
+                        <label for="activite">Secteur d'activité</label>
                         <input type="text" id="activite" name="activite" placeholder="Ex: Services informatiques, Commerce, Restauration...">
                     </div>
                     
                     <div class="form-group full-width">
-                        <label for="adresse_siege">Adresse du Siège</label>
+                        <label for="adresse_siege">Adresse du Siège Social</label>
                         <textarea id="adresse_siege" name="adresse_siege" rows="3" placeholder="Adresse complète du siège social"></textarea>
                     </div>
                 </div>
@@ -402,14 +402,14 @@
                             <div class="form-group">
                                 <label for="cin_front">CIN Recto <span class="required">*</span></label>
                                 <input type="file" id="cin_front" name="cin_front" accept="image/*,.pdf" required>
-                                <div class="file-info">Formats acceptés: JPG, PNG, PDF (Max: 5MB)</div>
+                                <div class="file-info">Formats acceptés : JPG, PNG, PDF (Maximum : 5MB)</div>
                                 <div id="cin_front_status" class="upload-status"></div>
                             </div>
 
                             <div class="form-group">
                                 <label for="cin_back">CIN Verso <span class="required">*</span></label>
                                 <input type="file" id="cin_back" name="cin_back" accept="image/*,.pdf" required>
-                                <div class="file-info">Formats acceptés: JPG, PNG, PDF (Max: 5MB)</div>
+                                <div class="file-info">Formats acceptés : JPG, PNG, PDF (Maximum : 5MB)</div>
                                 <div id="cin_back_status" class="upload-status"></div>
                             </div>
                         </div>
@@ -425,26 +425,26 @@
 
                 <div class="submit-container">
                     <button type="submit" class="submit-btn" id="submitBtn">
-                        🚀 Finaliser l'Onboarding
+                        🚀 Finaliser l'Intégration
                     </button>
                 </div>
             </form>
         </div>
 
         <div class="footer">
-            <div class="cabinet-info">[CABINET_NAME]</div>
-            <p>© 2024 - Processus d'onboarding sécurisé</p>
-            <p>Propulsé par [VOTRE_ENTREPRISE]</p>
+            <div class="cabinet-info">AGENCE EFFICADS</div>
+            <p>© 2024 - Processus d'intégration sécurisé</p>
+            <p>Propulsé par AGENCE EFFICADS</p>
         </div>
     </div>
 
     <script>
         // Configuration par cabinet - À personnaliser
         const CONFIG = {
-            WEBHOOK_URL: '[WEBHOOK_URL]', // URL n8n unique par cabinet
-            CABINET_NAME: '[CABINET_NAME]',
-            GESTIONNAIRE_NOM: '[GESTIONNAIRE_NOM]',
-            GESTIONNAIRE_EMAIL: '[GESTIONNAIRE_EMAIL]',
+            WEBHOOK_URL: 'https://n8n.srv910637.hstgr.cloud/webhook/client-onboarding',
+            CABINET_NAME: 'AGENCE EFFICADS',
+            GESTIONNAIRE_NOM: 'BENHLAL YAZID',
+            GESTIONNAIRE_EMAIL: 'benhlalyazid@gmail.com',
             THEME: 'theme-green' // theme-blue, theme-green, theme-red
         };
 
@@ -476,7 +476,7 @@
             if (file.size > maxSize) {
                 statusDiv.className = 'upload-status upload-error';
                 statusDiv.style.display = 'block';
-                statusDiv.textContent = `❌ Fichier trop volumineux (Max: 5MB)`;
+                statusDiv.textContent = `❌ Fichier trop volumineux (Maximum : 5MB)`;
                 return null;
             }
             
@@ -493,7 +493,7 @@
                 return fileData;
             } catch (error) {
                 statusDiv.className = 'upload-status upload-error';
-                statusDiv.textContent = `❌ Erreur lors du traitement: ${error.message}`;
+                statusDiv.textContent = `❌ Erreur lors du traitement : ${error.message}`;
                 return null;
             }
         }
@@ -515,7 +515,7 @@
 
             // Validation des fichiers requis
             if (!uploadedFiles.cin_front || !uploadedFiles.cin_back) {
-                alert('❌ Veuillez uploader les deux faces de votre CIN avant de continuer.');
+                alert('❌ Veuillez télécharger les deux faces de votre CIN avant de continuer.');
                 return;
             }
 
@@ -555,7 +555,7 @@
                 progressFill.style.width = '100%';
 
                 if (response.ok) {
-                    submitBtn.textContent = '✅ Onboarding Terminé !';
+                    submitBtn.textContent = '✅ Intégration Terminée !';
                     submitBtn.style.background = 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))';
                     submitBtn.classList.add('success-animation');
 
@@ -564,25 +564,25 @@
                         document.querySelector('.container').innerHTML = `
                             <div style="text-align: center; padding: 60px 30px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; border-radius: 20px;">
                                 <div style="font-size: 80px; margin-bottom: 20px;">🎉</div>
-                                <h1 style="font-size: 32px; margin-bottom: 20px;">Onboarding Terminé !</h1>
+                                <h1 style="font-size: 32px; margin-bottom: 20px;">Intégration Terminée !</h1>
                                 <div style="font-size: 20px; margin-bottom: 20px; font-weight: 600;">${CONFIG.CABINET_NAME}</div>
                                 <p style="font-size: 18px; opacity: 0.9; margin-bottom: 30px;">
-                                    Votre dossier a été créé avec succès. Vous allez recevoir un email de confirmation sous quelques minutes.
+                                    Votre dossier a été créé avec succès. Vous allez recevoir un e-mail de confirmation sous quelques minutes.
                                 </p>
                                 <div style="background: rgba(255,255,255,0.2); padding: 20px; border-radius: 10px; margin-top: 30px;">
                                     <p><strong>✅ Dossier Google Drive créé</strong></p>
-                                    <p><strong>✅ Documents uploadés</strong></p>
-                                    <p><strong>✅ Emails envoyés</strong></p>
+                                    <p><strong>✅ Documents téléchargés</strong></p>
+                                    <p><strong>✅ E-mails envoyés</strong></p>
                                     <p><strong>✅ Votre gestionnaire vous contactera sous 48h</strong></p>
                                 </div>
                             </div>
                         `;
                     }, 1500);
                 } else {
-                    throw new Error(`Erreur HTTP: ${response.status}`);
+                    throw new Error(`Erreur HTTP : ${response.status}`);
                 }
             } catch (error) {
-                console.error('Erreur:', error);
+                console.error('Erreur :', error);
                 submitBtn.textContent = '❌ Erreur - Réessayer';
                 submitBtn.style.background = 'linear-gradient(135deg, #dc3545, #c82333)';
                 alert('❌ Une erreur est survenue lors de l\'envoi. Veuillez réessayer ou contacter le support.');
@@ -599,11 +599,6 @@
 
         // Personnalisation à l'initialisation
         document.addEventListener('DOMContentLoaded', function() {
-            // Remplacer les placeholders
-            document.querySelectorAll('[CABINET_NAME]').forEach(el => {
-                el.textContent = el.textContent.replace('[CABINET_NAME]', CONFIG.CABINET_NAME);
-            });
-            
             // Appliquer le thème
             document.body.className = CONFIG.THEME;
         });
