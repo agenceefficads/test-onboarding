@@ -369,16 +369,21 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="forme_juridique">Forme Juridique</label>
-                            <select id="forme_juridique" name="forme_juridique">
-                                <option value="">Sélectionnez...</option>
-                                <option value="SARL">SARL</option>
-                                <option value="SA">SA</option>
-                                <option value="EURL">EURL</option>
-                                <option value="SNC">SNC</option>
-                                <option value="Auto-entrepreneur">Auto-entrepreneur</option>
-                            </select>
-                        </div>
+                            <label for="forme_juridique">Forme Juridique *</label>
+                            <select id="forme_juridique" name="forme_juridique" required>
+                            <option value="">-- Sélectionner une forme juridique --</option>
+                            <option value="SARL">SARL - Société à Responsabilité Limitée</option>
+                            <option value="SARL AU">SARL AU - Société à Responsabilité Limitée à Associé Unique</option>
+                            <option value="SA">SA - Société Anonyme</option>
+                            <option value="SAS">SAS - Société par Actions Simplifiée</option>
+                            <option value="SNC">SNC - Société en Nom Collectif</option>
+                            <option value="Entreprise individuelle">Entreprise individuelle</option>
+                            <option value="Auto-entrepreneur">Auto-entrepreneur</option>
+                            <option value="Association">Association</option>
+                            <option value="Coopérative">Coopérative</option>
+                            <option value="Autre">Autre</option>
+    </select>
+</div>
                     </div>
                     
                     <div class="form-group full-width">
